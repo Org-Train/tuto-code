@@ -12,6 +12,12 @@ jobs:
         steps:
             - name: Log ENV Var
               run: echo $GITHUB_REF   #in the running machine
+            - name: Log Context
+              run: echo '${{github.ref}}'   #by github acction before sending to the running machine 
+            - name: Set Env Var 
+              run: |
+                echo "NEW_ENV_VAR=$(date)" >> "$GITHUB_ENV"
+                echo "JOB_LV_ENV=$RANDOM">> "$GITHUB_ENV"
             - name: Log Custom ENV Vars
               env:
                 STEP_LV_ENV: This is avaialble only for this step
@@ -21,9 +27,9 @@ jobs:
                 echo $STEP_LV_ENV
                 echo $WF_LV_ENV
                 echo $JOB_LV_ENV
+                echo $NEW_ENV_VAR
 
-            - name: Log Context
-              run: echo '${{github.ref}}'   #by github acction before sending to the running machine
+
 
 
 
