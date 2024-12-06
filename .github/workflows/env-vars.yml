@@ -21,7 +21,7 @@ jobs:
                 
             - name: Multi Line Env Var
               run: |
-               DELIMITER = 1234
+               DELIMITER=1234
                echo "RANDOM_JOKE<< $DELIMITER" >> "$GITHUB_ENV"
                echo "Here is a joke: "  >> "$GITHUB_ENV"
                curl -s https://icanhazdadjoke.com/ >> "$GITHUB_ENV"
