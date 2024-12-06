@@ -1,7 +1,7 @@
 name: External Events
 on:
     repository_dispatch:
-        types: ["build"] # will run only of we sent event_type is build with REST API
+        types: ["build"] # will run only of we sent event_type is build with REST API or any external resource via api
 jobs:
     echo-a-string:
         runs-on: ubuntu-latest
