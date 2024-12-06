@@ -32,6 +32,5 @@ jobs:
                 echo '${{ toJson(steps) }}'
                 echo '${{ toJson(runner) }}'
 
-
-
-
+##https://docs.github.com/en/actions/writing-workflows/choosing-what-your-workflow-does/evaluate-expressions-in-workflows-and-actions#object-filters
+#https://docs.github.com/en/actions/writing-workflows/choosing-what-your-workflow-does/evaluate-expressions-in-workflows-and-actions#functions
