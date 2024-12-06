@@ -10,8 +10,7 @@ jobs:
           #uses:  actions/hello-world-javascript-action@main
           id: greet
           uses:  actions/hello-world-javascript-action@4eb553da6acf2ea2b2ed520bc2aaabf409213034
-          with: 
+          with:
             who-to-greet: Ekram
         - name: Log Greeting Time
           run: echo "${{steps.greet.outputs.time}}"
-          
