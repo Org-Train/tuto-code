@@ -1,8 +1,9 @@
 name: External Events
 on:
     repository_dispatch:
+        types: ["buid"] # will run only of we sent event_type is build with REST API
 jobs:
     echo-a-string:
         runs-on: ubuntu-latest
         steps:
-            - run: echo "Repostory Dispatch"
+            - run: echo ${{github.event.client_payload.env}}
