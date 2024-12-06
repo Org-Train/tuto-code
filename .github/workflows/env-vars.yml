@@ -1,0 +1,15 @@
+name: Environment Variable
+on: [push]
+jobs:
+    env-vars-and-context:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Log ENV Var
+              run: echo $GITHUB_REF   #in the running machine
+            - name: Log Context
+              run: echo '${{github.ref}}'   #by github acction before sending to the running machine
+
+
+
+#https://docs.github.com/en/actions/writing-workflows/choosing-what-your-workflow-does/store-information-in-variables#default-environment-variables
+
