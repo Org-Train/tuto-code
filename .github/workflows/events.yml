@@ -1,8 +1,28 @@
 name: Repository Events
 on: 
    push:
+    #filter branches, tags, paths
+    branches:
+        - main
+        -  "feature/*" #matches feature/featA, doesnt match feature/featA/
+        -  "feature/**" #matches feature/featA,  and feature/featA/
+        - "!feature/featA" # order is impototant
+    #branches-ignore:
+    #    - develop    # branches and branches-ignore cant be used together otherwise the workflow is invalid
+    tags:
+        - v1.* #maatches
+        - "!v1.1.1"
+    #tags-ignore
+    paths:
+        - "**.js"
+        - "!app.js"
    pull_request:
     types: [opened, assigned, reopened, synchronize]
+    branches:
+        - main
+    paths:
+        - "**.yml"
+        -   "**.js" 
    issues:
     types: [opened]
 jobs:
