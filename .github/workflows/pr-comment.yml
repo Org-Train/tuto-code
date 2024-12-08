@@ -6,8 +6,9 @@ jobs:
   pr-comment:
     runs-on: ubuntu-latest
     permissions: #read-all read for all scopes write-all as well or {}
-        issues: write
+        #issues: write
         #contents: read
+        pull-requests: write
     steps:
       - name: Comment on New PRs
         uses: actions/github-script@v6
