@@ -1,0 +1,16 @@
+name: Cahce and Artificats
+on: [workflow_dispatch]
+jobs:
+    use-axios:
+        runs-on: ubuntu-latest
+        steps:
+            - uses: actions/checkout@v3
+            - name: install dependecnices
+              run: npm i 
+            - name: use axios
+              uses: actions/github-script@v6
+              with:
+                script: |
+                 const axios = require('axios')
+                 const res = await axios.get('https://icanhazdadjoke.com/', {headers:{Accept:'test/plain'}})
+                 console.log(res.data)
