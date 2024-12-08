@@ -16,6 +16,8 @@ jobs:
         secrets:    
             access-token: ${{secrets.ACCESS_TOKEN}}
     calling-reusable:
+        #permissions:
+            #issues: read
         uses: ./.github/workflows/reusable-workflow.yml
         secrets: inherit
     using-reusable-workfloe-output:
@@ -24,3 +26,4 @@ jobs:
         steps:
             - run: echo ${{needs.calling-reusable.outputs.date}}
 
+#https://docs.github.com/en/actions/sharing-automations/reusing-workflows
