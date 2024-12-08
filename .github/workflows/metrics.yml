@@ -24,9 +24,11 @@ jobs:
                       node-version: 16
                     
             #max-parallel: 3
-            fail-fast: false # if any job fails, other will continue    
+            fail-fast: true # if any job fails, other will continue    
         runs-on: ${{matrix.os}}
         steps:
+          - if: matrix.experimental==true
+            run: exit 1  
           - run: node -v
           - run: echo '${{toJson(matrix)}}'
           - uses: actions/setup-node@v3
