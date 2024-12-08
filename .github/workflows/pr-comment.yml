@@ -6,7 +6,7 @@ jobs:
   pr-comment:
     runs-on: ubuntu-latest
     permissions: #read-all read for all scopes write-all as well or {}
-        issues: read
+        issues: write
         #contents: read
     steps:
       - name: Comment on New PRs
