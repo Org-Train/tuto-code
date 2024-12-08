@@ -17,6 +17,7 @@ jobs:
             access-token: ${{secrets.ACCESS_TOKEN}}
     calling-reusable:
         uses: ./.github/workflows/reusable-workflow.yml
+        secrets: inherit
     using-reusable-workfloe-output:
         runs-on: ubuntu-latest
         needs: calling-reusable

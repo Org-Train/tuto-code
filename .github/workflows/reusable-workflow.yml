@@ -6,6 +6,13 @@ on:
                 description: ' Input Description'
                 value: ${{jobs.generate-output.outputs.date}}
 jobs:
+    nested-workflow-call:
+        #runs-on: ubuntu-latest no need because it will run another workflow
+        uses: ./.github/workflows/reusable.yml
+        with:
+            name: 'Ekram'
+        secrets:    
+            access-token: ${{secrets.ACCESS_TOKEN}}
     generate-output:
         runs-on: ubuntu-latest
         outputs:
