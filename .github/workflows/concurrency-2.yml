@@ -8,7 +8,7 @@ on:
         type: environment
         required: true
 concurrency: 
-    group:  ${{github.event.inputs.environment}} # can be used in a single job as well, running just one at a time cnat be in //
+    group:  ${{github.workflow}} - ${{github.event.inputs.environment}} # can be used in a single job as well, running just one at a time cnat be in //
     cancel-in-progress: true
 jobs:
   sleep:
