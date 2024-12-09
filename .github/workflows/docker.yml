@@ -24,7 +24,9 @@ jobs:
                node -v
                cat /etc/os-release
             - name: Access to env
-              run: echo $API_URL  
+              run: |
+               echo $API_URL
+               echo ${{github.env.API_URL}}
 
 
 
