@@ -1,0 +1,20 @@
+name: Hello World
+author: Ekram Touir
+description: "Greet someone and recored time"
+inputs:
+    who_to_greet:
+        description: "Who to greet"
+        required: true
+        default: "World"
+outputs:
+    time:
+        description: "time of the greeting"
+runs:
+    using: "node16"
+    main: index.js
+    pre: "setup.js"
+    pre-if: runner.io == 'linux'
+    post:  "cleanup.js"
+    post-if: runner.io == 'linux'
+
+
