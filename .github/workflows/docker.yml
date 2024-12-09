@@ -25,8 +25,18 @@ jobs:
                cat /etc/os-release
             - name: Access to env
               run: |
-               echo $API_URL
+               echo $API_URL // will be executed in runner machine
                echo ${{github.env.API_URL}}
+            - name: Container in a step
+              uses: docker://node:18.16-alpine3.17
+              with:
+                entrypoint: '/usr/local/bin/node' # we can only a path to executable
+                args: -p 2+3
+            - name: Log Node Versio 
+              uses: docker://node:18.16-alpine3.17
+              with:
+                  args: -v   
+
 
 
 
