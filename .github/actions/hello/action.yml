@@ -13,8 +13,8 @@ runs:
     using: "node16"
     main: dist/index.js
     pre: "setup.js"
-    pre-if: runner.io == 'linux'
+    pre-if: runner.os == 'linux'
     post:  "cleanup.js"
-    post-if: runner.io == 'linux'
+    post-if: runner.os == 'linux'
 
 
