@@ -1,0 +1,32 @@
+name: DOCKER WORKFLOW
+on: [workflow_dispatch]
+jobs:
+    docker-job:
+        runs-on: ubuntu-latest
+        #container: node:20.3-alpine3.17
+        container:
+            image: node:20.3-alpine3.17
+            #credentials:
+                #username:
+                #password:
+            env: 
+                API_URL: some-url.com
+            ports:
+                - 80
+           #volumes:
+                   # - vol_name: /path/in/container
+                    #- /path/to/container
+                   # - path(in/host: /path/in/container
+            #options: --cpus 1
+        steps:
+            - name: Log node and os versions
+              run: |
+               node -v
+               cat /etc/os-release
+            - name: Access to env
+              run: echo $API_URL  
+
+
+
+
+    
