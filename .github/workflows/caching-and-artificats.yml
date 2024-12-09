@@ -44,3 +44,5 @@ jobs:
                  const axios = require('axios')
                  const res = await axios.get('https://icanhazdadjoke.com/', {headers:{Accept:'test/plain'}})
                  console.log(res.data)
+#https://docs.github.com/en/actions/writing-workflows/choosing-what-your-workflow-does/storing-and-sharing-data-from-a-workflow#passing-data-between-jobs-in-a-workflow
+                 
