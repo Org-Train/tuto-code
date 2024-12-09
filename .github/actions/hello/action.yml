@@ -11,7 +11,7 @@ outputs:
         description: "time of the greeting"
 runs:
     using: "node16"
-    main: index.js
+    main: dist/index.js
     pre: "setup.js"
     pre-if: runner.io == 'linux'
     post:  "cleanup.js"
