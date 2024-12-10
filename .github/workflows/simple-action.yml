@@ -8,12 +8,9 @@ jobs:
         - name: Checkout step
           uses: actions/checkout@v3
         - name: Send a Joke on Slack
-          uses: ./.github/actions/slack-joke
+          uses: ./.github/actions/slack-php
           id: slack-joke
           with:
-            slack_username: touirekram
-            upload_joke: touirekram
             slack_webhook: ${{secrets.SLACK_WEBHOOK}}
-        - name: Display an output 
-          run: echo '${{steps.slack-joke.outputs.joke}}'    
+            message: Hello Slack
 
